@@ -1,0 +1,83 @@
+[user]
+	name = Andriy Savchenko
+	email = andrey@aejis.eu
+	signingkey = 89C5884E088E98BF
+
+[alias]
+	s = status
+	b = branch
+	ba = branch -a -v -v
+	bs = !git-branch-status
+	bsi = !git-branch-status -i
+	ci = commit
+	co = checkout
+	put = push origin HEAD
+
+	d = diff -C
+	ds = diff -C --stat
+	dsp = diff -C --stat -p
+	dw = diff -C --color-words
+
+	l = log -C --decorate
+	ls = log -C --stat --decorate
+	lsp = log -C --stat -p --decorate
+	lg = log --graph '--pretty=tformat:%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'
+	lga = log --graph '--pretty=tformat:%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s' --all
+	l19 = log --graph '--pretty=tformat:%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s' --all -19
+	lsd = log --graph '--pretty=tformat:%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s' --all --simplify-by-decoration
+	ru = remote update
+	sb = show-branch --sha1-name
+	ls-del = ls-files -d
+	ls-mod = ls-files -m
+	ls-new = ls-files --exclude-standard -o
+	ls-ign = ls-files --exclude-standard -o -i
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true  # use n and N to move between diff sections
+	side-by-side = true
+	syntax-theme = base16-256
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
+[apply]
+	whitespace = nowarn
+
+[push]
+	default = simple
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpgsign = true

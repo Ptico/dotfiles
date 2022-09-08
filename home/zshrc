@@ -1,0 +1,54 @@
+zstyle ':zim:zmodule' use 'degit'
+
+ZIM_HOME=~/.cache/zim
+
+PURE_PROMPT_SYMBOL="➜"
+zstyle ':prompt:pure:prompt:success' color green
+zstyle ':prompt:pure:path' color cyan
+
+# Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
+
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+
+source ${ZIM_HOME}/init.zsh
+
+# Output of `thefuck --alias` for faster load
+fuck () {
+  TF_PYTHONIOENCODING=$PYTHONIOENCODING;
+  export TF_SHELL=zsh;
+  export TF_ALIAS=fuck;
+  TF_SHELL_ALIASES=$(alias);
+  export TF_SHELL_ALIASES;
+  TF_HISTORY="$(fc -ln -10)";
+  export TF_HISTORY;
+  export PYTHONIOENCODING=utf-8;
+  TF_CMD=$(
+      thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
+  ) && eval $TF_CMD;
+  unset TF_HISTORY;
+  export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
+  test -n "$TF_CMD" && print -s $TF_CMD
+}
+
+# chruby
+if [[ -f "/usr/local/share/chruby/chruby.sh" ]]; then
+  source /usr/local/share/chruby/chruby.sh
+fi
+
+if [[ -f "/usr/local/share/chruby/auto.sh" ]]; then
+  source /usr/local/share/chruby/auto.sh
+fi
+
+# FNM
+eval "$(fnm env --use-on-cd)"
+
+export PATH=bin:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
