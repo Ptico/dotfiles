@@ -40,9 +40,15 @@ fuck () {
 if [[ -f "/usr/local/share/chruby/chruby.sh" ]]; then
   source /usr/local/share/chruby/chruby.sh
 fi
+if [[ -f "${HOMEBREW_PREFIX}/opt/chruby/share/chruby/chruby.sh" ]]; then
+  source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+fi
 
 if [[ -f "/usr/local/share/chruby/auto.sh" ]]; then
   source /usr/local/share/chruby/auto.sh
+fi
+if [[ -f "${HOMEBREW_PREFIX}/opt/chruby/share/chruby/auto.sh" ]]; then
+  source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
 fi
 
 # FNM
@@ -52,3 +58,11 @@ export PATH=bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+# pnpm
+export PNPM_HOME="/Users/ptico/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

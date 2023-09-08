@@ -13,6 +13,7 @@ brew "dasel"   # jq/yq and more - https://github.com/tomwright/dasel
 # Development
 brew "git"
 brew "git-delta" # https://dandavison.github.io/delta/
+brew "gnupg"
 
 # Admin
 brew "tmux"
