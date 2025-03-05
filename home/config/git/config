@@ -1,6 +1,6 @@
 [user]
-	name = Andriy Savchenko
-	email = andrey@aejis.eu
+	name = Andrii Savchenko
+	email = ua.tbird@gmail.com
 	signingkey = 89C5884E088E98BF
 
 [alias]
@@ -51,7 +51,7 @@
 	syntax-theme = base16-256
 
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 
 [diff]
 	colorMoved = default
@@ -81,3 +81,5 @@
 	program = /opt/homebrew/bin/gpg
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = master

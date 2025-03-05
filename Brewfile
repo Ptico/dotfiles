@@ -1,12 +1,13 @@
 # CLI
-brew "zsh"
-brew "zim"
-brew "ripgrep" # Search
+brew "fish"
+brew "fisher"
+brew "fd"      # File search (required by fzf plugin)
+brew "ripgrep" # Line search
 brew "fzf"     # Fuzzy finder - https://github.com/junegunn/fzf
 brew "xh"      # Friendly curl - https://github.com/ducaale/xh
 brew "thefuck" # Autocorrection
 brew "tldr"    # Man
-brew "exa"     # ls - https://github.com/ogham/exa
+brew "eza"     # ls - https://eza.rocks
 brew "bat"     # cat - https://github.com/sharkdp/bat
 brew "dasel"   # jq/yq and more - https://github.com/tomwright/dasel
 
@@ -17,7 +18,6 @@ brew "gnupg"
 
 # Admin
 brew "tmux"
-brew "smug" # tmux manager - https://github.com/ivaaaan/smug
 brew "nvim"
 brew "mosh"
 brew "htop"
@@ -26,7 +26,7 @@ brew "dog" # better dig - https://github.com/ogham/dog
 
 # Ruby
 brew "ruby-install"
-brew "chruby"
+brew "chruby-fish"
 
 # Node
 brew "fnm"
