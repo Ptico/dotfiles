@@ -1,0 +1,15 @@
+# This is the configuration file for Ghostty.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+# Visual configurator https://ghostty.zerebos.com
+
+theme = tokyonight-storm
+
+command = /opt/homebrew/bin/fish --login --interactive
+
+macos-option-as-alt = right

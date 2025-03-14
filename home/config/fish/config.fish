@@ -40,9 +40,11 @@ if status is-interactive
   set hydro_color_git $fish_color_autosuggestion
 
   # FZF settings
-  set fzf_diff_highlighter delta --paging=never --width=20 # Use delta for diffs
-  set fzf_preview_dir_cmd eza --all --color=always         # Use eza for dir listing
-  set fzf_preview_file_cmd bat                             # Use bat for file preview
+  set fzf_diff_highlighter delta --paging=never    # Use delta for diffs
+  set fzf_preview_dir_cmd eza --all --color=always # Use eza for dir listing
+  set fzf_preview_file_cmd bat                     # Use bat for file preview
+
+  fzf_configure_bindings --directory=ctrl-f --processes=ctrl-p
 end
 
 # Functions
