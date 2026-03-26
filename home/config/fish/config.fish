@@ -56,3 +56,5 @@ end
 
 # Add relative bin folder to the path
 set PATH bin $PATH
+# python usually put bin to .local
+set PATH ~/.local/bin $PATH
