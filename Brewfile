@@ -17,12 +17,13 @@ brew "git-delta" # https://dandavison.github.io/delta/
 brew "gnupg"
 
 # Admin
+brew "mole"
 brew "tmux"
 brew "nvim"
 brew "mosh"
 brew "htop"
+brew "btop"
 brew "mc"
-brew "dog" # better dig - https://github.com/ogham/dog
 
 # Ruby
 brew "ruby-install"
